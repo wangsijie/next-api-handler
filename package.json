@@ -1,0 +1,17 @@
+{
+  "name": "next-api-kits",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:wangsijie/next-api-handler.git",
+  "author": "wangsijie <wangsijie94@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepack": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "next": "^13.0.5",
+    "typescript": "^4.9.3",
+    "zod": "^3.19.1"
+  }
+}
