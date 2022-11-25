@@ -1,7 +1,8 @@
 {
   "name": "next-api-kits",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.1",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "repository": "git@github.com:wangsijie/next-api-handler.git",
   "author": "wangsijie <wangsijie94@gmail.com>",
   "license": "MIT",
