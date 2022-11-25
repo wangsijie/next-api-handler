@@ -18,11 +18,15 @@ export const allowMethods = (...methods: string[]) => {
   };
 };
 
-export type WithAuth<T> = T & { auth: string };
+declare module "http" {
+  interface IncomingMessage {
+    auth: string;
+  }
+}
 
 export const buildRequireAuth =
   (getUserIdFromReq: (req: IncomingMessage) => Promise<string>) =>
-  async (req: WithAuth<NextApiRequest>): Promise<void> => {
+  async (req: IncomingMessage): Promise<void> => {
     if (process.env.NODE_ENV === "test") {
       return;
     }
@@ -73,7 +77,7 @@ export const buildRequireScope =
     scope3?: T,
     method3?: Method
   ) => {
-    return async (req: WithAuth<NextApiRequest>): Promise<void> => {
+    return async (req: IncomingMessage): Promise<void> => {
       if (process.env.NODE_ENV === "test") {
         return;
       }
